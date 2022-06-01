@@ -68,3 +68,32 @@ console.log(concatString);
 const functExample = () => { };
 let myFunction;
 myFunction = functExample;
+let flash = {
+    name: "Flash",
+    age: 26,
+    powers: ["Run", "Stamina"],
+    callback: function () {
+        var _a;
+        return `${this.name} ${this.age} ${((_a = this.powers) === null || _a === void 0 ? void 0 : _a.join(" ")) || ""}`;
+    },
+};
+flash.name = "Flash run";
+console.log(flash.callback());
+let objeto = {
+    ALGO: {
+        1: "One Algo",
+    },
+};
+objeto["ALGO2"] = {
+    1: "One Algo2",
+};
+console.log(objeto);
+let superman;
+superman = {
+    name: "Superman",
+    age: 40,
+    powers: ["Fly"],
+    callback: function () {
+        return this.name;
+    },
+};
