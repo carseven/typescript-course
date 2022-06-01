@@ -40,3 +40,31 @@ var AudioLevelAndroid;
 console.log({ AudioLevelAndroid });
 console.log(AudioLevelAndroid.medium);
 let ejemploNumber = null;
+// Pequeño ejemplo mediante callbacks
+const operation = (num, callback) => {
+    setTimeout(() => {
+        callback(num);
+    }, 2000);
+};
+(() => {
+    operation(1, (num) => {
+        console.log(num);
+    });
+})();
+const ejemplo12 = (arg) => {
+    return arg;
+};
+function isNull(arg, isNull = false) {
+    if (isNull)
+        return null;
+    return !!arg ? arg : "";
+}
+isNull();
+function restArgs(firstName, ...restArgs) {
+    return `${firstName} ${restArgs.join(" ")}`;
+}
+const concatString = restArgs("carles", "typescript", "something", "else");
+console.log(concatString);
+const functExample = () => { };
+let myFunction;
+myFunction = functExample;
