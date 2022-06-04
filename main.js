@@ -1,42 +1,17 @@
 "use strict";
-var conducirBatimovil = function (auto) {
-    auto.encender = true;
-    auto.velocidadMaxima = 100;
-    auto.acelerar();
-};
-var batimovil = {
-    encender: false,
-    velocidadMaxima: 0,
-    acelerar: function () {
-        console.log("...... gogogo!!!");
-    },
-};
-conducirBatimovil(batimovil);
-var guason = {
-    reir: true,
-    comer: true,
-    llorar: false,
-};
-var reir = function (guason) {
-    if (guason.reir) {
-        console.log("JAJAJAJA");
-    }
-};
-var ciudadGotica = function (ciudadanos) {
-    return ciudadanos.length;
-};
-var Persona = (function () {
-    function Persona(nombre, edad, sexo, estadoCivil) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.sexo = sexo;
-        this.estadoCivil = estadoCivil;
-    }
-    Persona.prototype.imprimir = function () {
-        console.log("".concat(this.nombre, " ").concat(this.edad, " ").concat(this.sexo, " ").concat(this.estadoCivil));
-    };
-    return Persona;
-}());
-var carles = new Persona("Carles", 20, "M", "Soltero");
-carles.imprimir();
+var Validations;
+(function (Validations) {
+    Validations.validateText = function (text) { return text.length > 3; };
+    Validations.validateDate = function (date) { return !isNaN(date.valueOf()); };
+})(Validations || (Validations = {}));
+var Validations2;
+(function (Validations2) {
+    Validations2.validateText = function (text) { return text.length > 3; };
+    Validations2.validateDate = function (date) { return !isNaN(date.valueOf()); };
+})(Validations2 || (Validations2 = {}));
+console.log(Validations.validateText("Carles"));
+console.log(Validations.validateDate(new Date()));
+console.log(Validations2.validateText("Carles"));
+console.log(Validations2.validateDate(new Date()));
+Validations.validateDate(new Date());
 //# sourceMappingURL=main.js.map
